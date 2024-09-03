@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0; /*vem padrão 8px */
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-login{
+    width: 100vw; /*100% da Viewport width*/
+    height: 100vh; /*100% da Viewport height */
+    background: #201b2c;
+    display: flex;
+    justify-content: center; /*eixo X */
+    align-items: center;  /*eixo Y */
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*imagem abaio do texto */
+}
+
+.left-login > h1 {
+    font-size: 3vw; /*Título responsivo */
+    color: #77ffc0;
+}
+
+.left-login-image{
+    width: 35vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{
+    width: 60%; /*Tamanho da DIV que está o card-login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*Um embaixo do outro */
+    padding: 30px 35px;  /*margens dentro do componente: y e x*/
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056; /*sombra: x(direita/esquerda), y(cima/baixo), bor e a cor  */
+}
+
+.card-login > h1 {
+    color: #00ff88;
+    font-weight: 800; /*grossura da fonte */
+    margin: 0;
+}
+
+.textfield{  /*organizar o label e o input um debaixo do outro */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*no textfield é o inverso*/
+    align-items: flex-start; /*eixo X */
+    justify-content: center; /*eixo Y */
+    margin: 5px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: nome;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12px;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: nome; /*Retira caixa do lado quando clica*/
+    box-sizing: border-box; /*Para corrigir o input que está passando do card*/
+    /*DIV filho não passará o tamanho da DIV pai*/
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: nome;
+    border-radius: 8px;
+    outline: nome;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+/*Enquanto for na tela uma largura de 950px adicione os elementos */ 
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;  /*Colocar um embaixo do outro */
+    }
+    .left-login > h1{ /*Tela de celular não precisa de muita informação */
+        display: nome;   /*Retirar o título*/
+    }
+    .left-login{ /*Ocupar 100% da página*/
+        width: 100%;
+        height: auto;
+    }
+    .right-login{ /*Ocupar 100% da página */
+        width: 100%;
+        height: auto;
+    }
+    .left-login-image{ /*Almentar a imagem */
+        width: 50vw;
+    }
+    .card-login{ /*Para ele não ocupar 100% da largura*/ 
+        width: 90%;
+        /* É necessário depois do Body para especificar que todos os estilios servirão para qualquer tamanho de tela (*)
+        body * {
+        box-sizing: border-box;
+         */
+    }
+}
